@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            *{
+                 margin: 0px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                padding:0%;
+                box-sizing:content-box;            
+            }
+            .body{
+                margin:100px 400px;
+                background-color: rgb(3, 71, 83);
+                padding:80px 10px;
+                border-radius: 20px;
+                height:200px;
+                width:500px;
+                border-bottom:1px solid;
+                color:white;
+                font-size:1.2rem;
+            }
+            .ip{
+                padding:10px 50px;
+                display:flex;
+                text-align:center;
+                width:40%;
+            }
+            .degree{
+                width:60%;
+                padding:20px 50px;
+                text-align:left;
+                
+            }
+            .degree .t{
+                border:none;
+                background:transparent;
+                border-bottom:1px solid #f8f8f8;
+                margin-top:0.5cm;
+                padding:5px 0px;
+                font-size:1rem;
+                color:rgb(247, 244, 244);
+            }
+            .degree .opti{
+                border:none;
+                background:transparent;
+                border-bottom:1px solid #f8f8f8;
+                margin-top:0.5cm;
+                color:rgb(240, 238, 238);
+                padding:5px 0px;
+                font-size:1rem;
+            }
+            .t
+            #opt{
+                width:100%;
+                font-size:50px;
+                outline:none;
+                text-align:center;
+                color: rgb(13, 15, 15);
+                background: rgb(148, 68, 82);
+                border:none;
+            }
+            select.opti option.optio{
+                margin-top:20px;
+                color:rgb(243, 231, 231);
+                background-color:rgb(141, 140, 135);
+            }
+            .Result .value{
+                width:283%;
+                font-size:20px;
+                color: rgb(241, 247, 247);
+                background-color: rgb(236, 243, 243);
+                border:none;
+                background:transparent;
+                border-bottom:1px solid #f7f3f3;
+                margin:5px 10px;
+                padding:15px 10px;
+                margin-left:0cm;
+                text-align: center;
+            }
+            .Result{
+                margin:10px 0px;
+                margin-top:0px;
+                padding:5px 98px;
+                width:20%;
+                text-align: left;
+            }
+            .functions .conv{
+                margin:15px 110px;
+                background-color: rgb(71, 172, 219);
+                border:none;
+                font-size:20px;
+                width:20%;
+                padding:3px 5px;
+                margin-left:0cm;
+                transition:all .2s linear;
+                border-radius:10px;
+                
+            }
+            .functions .conv:hover{
+                color:rgb(205, 248, 248);
+                transition:none;    
+                background:rgb(4, 89, 218);
+            }
+            .functions .reset{
+                background-color: rgb(71, 172, 219);
+                border:none;
+                font-size:20px;
+                width:20%;
+                padding:3px 5px;
+                margin-left:-2cm;
+                border-radius:10px;
+            }
+            .functions .reset:hover{
+                color:rgb(205, 248, 248);
+                transition:none;    
+                background:rgb(4, 89, 218);
+            }
+        </style>
+    </head>
+    <body style="text-align:center;">
+        <div class="body">
+            <h2 style="text-align:center;color:rgb(236, 240, 245);margin-top:-1.2cm;">Temperature Converter</h2>
+            <div class="ip">
+                <div class="degree">
+                    <p>Degree</p>
+                    <input type="number" class="t" placeholder="Enter Degrees" id="deg">
+                </div>
+                <div class="degree">
+                    <p>Type</p>
+                    <select id="option" class="opti">
+                        <option value="fahrenheit" class="optio">fahrenheit</option>
+                        <option value="celsius" class="optio">celsius</option>
+                    </select>
+                </div>
+            </div>
+            <div class="Result">
+                <p>Result</p>
+                <div class="value" id="val"></div>
+            </div>
+            <div class="functions">
+                <button onclick="converter()" class="conv">convert</button>
+                <button onclick="reset()" class="reset">reset</button>
+            </div>
+        </div>
+        <script>
+            function converter()
+            {
+                var op=document.querySelector("#option");
+                var res=document.querySelector(".value");
+                var ip=document.querySelector(".t").value;
+                if(op.value=="fahrenheit")
+                {
+                    var c=(ip-32)*(5/9)
+                    res.innerHTML=c+"°C"
+                }
+                if(op.value=="celsius")
+                {
+                    var f=ip*9/5+32
+                    res.innerHTML=f+"°F"
+                }
+            }
+            function reset()
+            {
+                var res=document.querySelector(".value");
+                document.getElementById("deg").value='';
+                deg.innerHTML="  "
+                document.getElementById("val").value='';
+                val.innerHTML=" "
+            }
+        </script>
+    </body>
+</html>
