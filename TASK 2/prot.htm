@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            *{
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+                outline:none;
+                border:none;
+                
+            }
+            html{
+                font-size:62.5%;
+                overflow:hidden;
+            }
+            body{
+                min-height:100vh;
+                overflow:hidden;
+                display:flex;
+                align-items:flex-start;
+                justify-content:space-between;
+                background-color: #c5c1c1;
+                padding:5.5rem;
+            }
+            .btn{
+                font-size:2rem;
+                padding:.7rem 4rem;
+                background:grey;
+                color:rgb(63, 160, 160);
+                border-radius:1rem;
+            }
+            header{
+                width:35rem;
+                background: rgb(50, 58, 55);
+                backdrop-filter: blur(.4rem);
+                text-align:center;
+                padding:1rem;
+                border-radius:1rem;
+            }
+            header .image{
+                padding-top:2rem;
+            }
+            header .image img{
+                margin:1rem;
+                height:15rem ;
+                width:15rem;
+                border-radius: 50%;
+                object-fit: cover;
+
+            }
+            header .image .name{
+                font-size:3rem;
+                color:rgb(225, 245, 239);
+                padding:0rem 0;
+            }
+            header .image .stu{
+                font-size:1.8rem;
+                color:rgb(165, 240, 95);
+                font-weight: lighter;
+            }
+            header .slide{
+                padding:1rem 3rem;    
+            }
+            header .slide ul li{
+                margin:1rem 0;
+                list-style:none;
+            }
+            header .slide ul li a{
+                display:block;
+                padding:1rem;
+                font-size:2rem;
+                color:rgb(14, 15, 15);
+                background: rgb(126, 204, 235);
+                border-radius: 1rem;
+                transition:all .2s linear;
+            }
+            header .slide ul li a:hover{
+                background:rgb(36, 39, 37) ;
+                color:rgb(205, 248, 248);
+                transition:none;
+            }
+            .content{
+                height:57rem;
+                width:100rem;
+                background-color: rgb(208, 134, 252);
+                backdrop-filter: blur(.4rem);
+                border-radius:1rem;
+                overflow: hidden;
+                color:rgb(233, 240, 240);
+                
+            }
+            .home{
+                min-height:100%;
+                display:flex;
+                align-items:left; 
+                flex-flow:column;
+                position:relative;
+                padding: 100px 70px;
+                color:white;
+            }
+            .home h1{
+                font-size:4rem;
+                font-weight:lighter;
+                
+                
+            }
+            .home .name{
+                font-size:4rem;
+                font-weight:lighter;
+                
+                font-family: bold;
+            }
+            .home .name span{
+                font-size:4rem;
+                color:rgb(241, 46, 12);
+                font-weight:2px;
+                font-family:algerian;
+            }
+            .home h3{
+                font-size:2rem;
+                font-weight:lighter;
+                
+                font-family: bold;
+            }
+            .home .hel{
+                font-size:4rem;
+                font-weight:lighter;
+                
+                font-family: bold;
+            }
+            .about{
+                min-height:100%;
+                display:flex;
+                align-items:left; 
+                flex-flow:column;
+                position:relative;
+                padding: 50px 70px;
+                
+            }
+            .about .name{
+                font-size:2rem;
+                font-weight:lighter;
+                color:white;
+                width:90%;
+            }
+            .about .name span{
+                font-size:4rem;
+                color:rgb(109, 33, 77);
+            }
+            .about h2{
+                font-size:4rem;
+                color:rgb(4, 70, 55);               
+                padding:40px 10px;
+            }
+            .skills{
+                min-height:100%;
+                display:flex;
+                align-items:left; 
+                flex-flow:column;
+                position:relative;
+                padding: 50px 70px;
+                
+            }
+            .skills .matter{
+                padding:10px 0px;
+                font-size:3rem;
+                height:50px;
+                width:500px;
+                background:none;
+                color:rgb(197, 109, 27);
+            }
+            .skills .skillprogress{
+                padding:20px 0px;
+            }
+            .skills .skillprogress .progress{
+                margin:2rem 0;
+                padding:0.5rem;
+                box-shadow:0 1rem 2rem rgb(0,0,0);
+                background: rgb(230, 81, 192);
+                border-radius: 1rem;
+                width:50rem;
+            }  
+            .skills .skillprogress .progress h3{
+                display:flex;
+                justify-content: space-between;
+                font-size: 2rem;
+                color:white;
+            }
+            .skills .skillprogress .progress h3 span{
+                padding-right: 30px;
+            }
+            .skills .skillprogress .progress .bar{
+                position: relative;
+                width:100%;
+                height:.25rem;
+                margin:1rem 0;
+                background:rgb(131, 120, 120);    
+            }
+            .skills .skillprogress .progress .bar span{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height:100%;
+                width:100%;
+                background:white;
+            }
+            .skills .skillprogress .progress:nth-child(1) .bar span{
+                width:75%;
+            }
+            .skills .skillprogress .progress:nth-child(2) .bar span{
+                width:75%;
+            }
+            .skills .skillprogress .progress:nth-child(3) .bar span{
+                width:60%;
+            }
+            .skills .skillprogress .progress:nth-child(4) .bar span{
+                width:65%;
+            }
+            .EDU{
+                min-height:100%;
+                display:flex;
+                align-items:left; 
+                flex-flow:column;
+                position:relative;
+                padding: 50px 70px;
+                
+            }
+            .EDU .educ{
+                font-size:4rem;
+                color:rgb(3, 102, 72);
+            }
+           
+            .EDU h2{
+                font-size:3rem;
+                color:rgb(41, 40, 40);
+                text-align:left;
+            }
+            .EDU .btech{
+                height:20rem;
+                width:30rem;
+                background:none;
+                color:white;
+                font-size:1.5rem;
+            }
+            .EDU .inter{
+                height:20rem;
+                width:30rem;
+                background:none;
+                color:white;
+                font-size:1.5rem;
+            }
+            .EDU .school{
+                height:20rem;
+                width:50rem;
+                background:none;
+                color:white;
+                font-size:1.5rem;
+                padding:30px 100px;
+                margin:30px 350px;
+                margin-top:-11.4cm;
+                
+            }
+            .EDU .eduimg{
+                margin:25px 420px;
+                padding:30px 30px;
+                margin-top:-2cm;
+            }
+            .contact{
+                min-height:100%;
+                display:flex;
+                align-items:left; 
+                flex-flow:column;
+                position:relative;
+                padding: 50px 70px;
+                
+            }
+            .contact .head{
+                font-size:3rem;
+                color:rgb(197, 109, 27);
+                font-weight:bold;
+                padding:5px 70px;
+            }
+            .contact .add span{
+                font-size:2.5rem;
+                color:rgb(104, 104, 6);
+                font-weight:lighter;
+            }
+            .contact .phn span{
+                font-size:2.5rem;
+                color:rgb(104, 104, 6);
+                font-weight:lighter;
+            }
+            .contact .add{
+                font-size:2rem;
+                color:rgb(51, 51, 48);
+                font-weight:lighter;
+            }
+            .contact .phn{
+                font-size:1.8rem;
+                font-weight:lighter;
+                color:rgb(40, 42, 44);
+            }
+            .contact .mail{
+                padding:0px 0px;
+                margin-top: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="image">
+                <img class="img" src="myimg.jpeg" alt="MyImage" height="150" width="150">
+                <h2 class="name">Meghana K</h2>
+                <p class="stu">Student</p>
+            </div>
+            <nav class="slide">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Skills">Skils</a></li>
+                    <li><a href="#Edu">Education</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </nav>
+       </header>
+       <div class="content">
+        <section class="home" id="Home">
+            <h2 class="hel">Hello!</h6>
+            <h1 class="name">I'm <span>MEGHANA KONASANI</span></h1>
+            <h3 class="stu">I'm a Web Developer.</h3><br><br><br>
+        </section>
+        <section class="about" id="About">
+            <h2>About Me</h2>
+            <h1 class="name">My name is <span>Meghana Konasani</span></h1><br>
+            <h3 class="name">I am outgoing, dedicated and open-minded.My personal philosophy when it comes to education and learning is that students who are motivated display goal oriented behaviour.
+            My goal is to develop a well designed website that can increase credibility and brand recognition.</h3><br><br>   
+        </section>
+        <section class="skills" id="Skills">
+            <div class="matter">
+                <h2>skills</h2>
+            </div>
+            <div class="skillprogress">
+            <div class="progress">
+                <h2>HTML <span style="padding:0 450px;">75%</span></h2><br>
+                <div class="bar"><span></span></div>
+            </div>
+            <div class="progress">
+                <h2>CSS <span style="padding:0px 450px;">75%</span></h2><br>
+                <div class="bar"><span></span></div>
+            </div>
+            <div class="progress">
+                <h2>C Programming <span style="padding:0px 450px;">60%</span></h2><br>
+                <div class="bar"><span></span></div>
+            </div>
+            <div class="progress">
+                <h2>C++ Programming <span style="padding:0px 450px;">65%</span></h2><br>
+                <div class="bar"><span></span></div>
+            </div>
+        </div>
+        </section>
+        <section class="EDU" id="Edu">    
+            <h2 class="educ">Education</h2><br><br><br>
+            <div class="btech">
+                <h2>2020-2024</h2>
+                <h3>SASTRA Deemed To Be University, Kumbakonam</h3>
+                <h3>Currently persuing Btech IIIrd year.</h3>
+                <h3>CSE Department</h3>
+                <h3>8.3218 CGPA (till 4th semester)</h3>
+            </div>
+            <div class="inter">
+                <h2>2018-2020</h2>
+                <h3>Jupiter Junior College, Guntur</h3>
+                <h3>MPC (Maths,Physics,Chemstry)</h3>
+                <h3>passed with 95%</h3>
+                <h3>JEE MAIN Score: 94.5%</h3>
+            </div>
+            <div class="school">
+                <h2>2018</h2>
+                <h3>Jawahar Navodaya Vidyalaya, Ongole</h3>
+                <h3>Completed my Schooling(10th)</h3>
+                <h3>Passed with 90%</h3>
+            </div>
+            <div class="eduimg">
+                <img src="educationimg.jpeg" alt="img" length="50px" width="150px">    
+            </div>
+        </section>
+        <section class="contact" id="Contact">
+            <h2 class="head">Contact Me</h2><br><br><br>
+            <address style="font-size: 2rem;">
+                You can contact at
+                <a href="tel:+19999999999">(999) 999-9999</a><br><br>
+                You can visit me at :<br>
+                Mozilla Foundation<br />
+                331 E Evelyn Ave<br />
+                Mountain View, CA 94041<br />
+                USA
+              </address><br><br><br>
+              <h2 style="font-size:2rem;">My Linkedin Account:</h2><br>
+            <a href="https://www.linkedin.com/in/meghana-konasani-914aba249">
+                <img src="linkedinimg.jpeg" alt="linkedin" height="40" width="40"></a>    
+                <br><h2 style="font-size:2rem;">You can mail me at below given address</h2><br>
+                <div class="mail">
+                <a href="mailto: meghanareddykonasani@gmail.com">
+                    <img src="mailimg.jpeg" alt="mail" height="40" width="40"></a>    
+            </div>
+        </section>
+
+        </div>
+    </body>
+</html>
